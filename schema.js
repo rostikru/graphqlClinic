@@ -1,6 +1,7 @@
 import { buildSchema } from "graphql";
 
 const schema = buildSchema(`
+
     type Query {
         patient: Patient
         clinic: Clinic,
@@ -31,8 +32,6 @@ const schema = buildSchema(`
         doctor: String
     }
 
-    
-
     type Mutation {
         createPatient(input: PatientInput): Patient,
         createProcedure(input: ProcedureInput): Procedurs,
@@ -61,24 +60,8 @@ const schema = buildSchema(`
         address: String
         city: String
         procedurs: String
-    }
-
-
-   
-    
+    }  
 
 `)
-
-
-// описати схему, квері і мутації для 3 табличок:
-// 1.) паціент
-// 2.) клініка
-// 3.) процедури
-// кожна з табличок має мінімум 5 полів
-// паціент -- клініка 1 до 1
-// клінка -- процедури 1 до багатьох
-// паціент -- процедури 1 до багатьох
-// повинна бути базова схема для графкюл по всім табличкам
-// 3 квері/мутації, по 1 для кожної з табличок
 
 export default schema;
